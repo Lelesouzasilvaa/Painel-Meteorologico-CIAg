@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block title %}Dashboard Meteorológico{% endblock %}
+
+{% block content %}
+<div class="container-dashboard">
+    <header class="cabecalho">
+        <div class="info-localizacao">
+            <span class="material-symbols-outlined icone-mapa">location_on</span>
+            <h1>{{ city_data.city }}</h1>
+            <p>Ultima atualizacao: {{ city_data.last_updated }}</p>
+        </div>
+        
+        <form class="caixa-busca" method="POST" action="/">
+            <input 
+                type="text" 
+                placeholder="Buscar cidade..." 
+                name="city_name" 
+                required
+            />
+            <button type="submit" class="material-symbols-outlined">
+                search 
+            </button>
+        </form>
+    </header>
+
+    <div class="grid-conteudo-principal">
+        
+        <div class="painel-esquerdo">
+            
+            <div class="card card-tempo-atual">
+                <div class="atual-principal">
+                    <span class="material-symbols-outlined icone-tempo">{{ current.icon }}</span>
+                    <span class="temp">{{ current.temp }}°</span>
+                    <div class="detalhes-pequenos">
+                        <p>Vento <span class="destaque-dados">{{ current.wind_speed }}</span> km/h</p>
+                        <p>Umidade <span class="destaque-dados">{{ current.humidity }}</span>%</p>
+                        <p>Pressao <span class="destaque-dados">{{ current.pressure }}</span> hPa</p>
+                    </div>
+                </div>
+                <p class="condicao">{{ current.condition }}</p>
+            </div>
+
+            <div class="card card-previsao-horaria">
+                <h2>Previsao Horaria (Proximas 24h)</h2>
+                <div class="area-grafico">
+                    <canvas id="graficoHorario"></canvas>
+                </div>
+                <div class="lista-detalhes-horarios">
+                    {% for item in hourly_forecast %}
+                    <div class="item-hora">
+                        <p class="hora-tempo">{{ item.time }}</p>
+                        <span class="material-symbols-outlined icone">{{ item.icon }}</span>
+                        <p class="hora-temp">{{ item.temp }}°</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="painel-direito">
+            <div class="card card-previsao-semanal">
+                <h2>Proximos 7 Dias</h2>
+                {% for day in weekly_forecast %}
+                <div class="item-dia">
+                    <p class="nome-dia">{{ day.day }}</p>
+                    <div class="dia-temperaturas">
+                        <span class="material-symbols-outlined icone-dia">{{ day.icon }}</span>
+                        <span class="temp-max">{{ day.max_temp }}°</span>
+                        <span class="temp-min">{{ day.min_temp }}°</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="grid-widgets-inferiores">
+        {% for widget in bottom_widgets %}
+        <div class="card card-widget">
+            <span class="material-symbols-outlined icone">{{ widget.icon }}</span>
+            <p class="rotulo-widget">{{ widget.label }}</p>
+            <p class="valor-widget destaque-dados">{{ widget.value }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const CHART_TEMPS = JSON.parse(`{{ chart_temps | default('[]') | tojson | safe }}`);
+    const CHART_TIMES = JSON.parse(`{{ chart_times | default('[]') | tojson | safe }}`);
+</script>
+
+
+<script src="{{ url_for('static', filename='js/chart.js') }}"></script>
+{% endblock %}
