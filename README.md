@@ -40,33 +40,25 @@ O dashboard demonstra boas práticas de desenvolvimento, focando na organizaçã
 
 O código Python e o CSS seguem uma estrutura modular para desacoplamento e clareza:
 
+```plaintext
 Painel-Meteorologico-CIAg/
-├── app.py # Roteamento Flask (Camada de Apresentação)
-├── requirements.txt # Lista de dependências Python
-├── services/ # Camada de Negócios e Acesso a Dados
-│ ├── api_client.py # Funções puras para requisições externas (APIs)
-│ ├── mapping.py # Lógica para mapear códigos da API para ícones e descrições em Português
-│ └── weather_service.py # Orquestrador: Processa dados brutos e implementa a lógica de cache (get_cached_weather_data)
+├── app.py                  # Roteamento Flask (Camada de Apresentação)
+├── requirements.txt        # Lista de dependências Python
+├── services/               # Camada de Negócios e Acesso a Dados
+│   ├── api_client.py       # Funções puras para requisições externas (APIs)
+│   ├── mapping.py          # Mapeamento de códigos da API para ícones e descrições em Português
+│   └── weather_service.py  # Orquestrador: processa dados brutos e implementa lógica de cache
 ├── static/
-│ ├── css/ # Modularização dos estilos
-│ │ ├── base/ # Variáveis e Reset
-│ │ ├── components/ # Cards, Header, Tooltips
-│ │ ├── layout/ # Grids e Responsividade
-│ │ └── style.css # Arquivo final linkado no HTML
-│ └── js/
-│ └── chart.js
+│   ├── css/                # Modularização dos estilos
+│   │   ├── base/           # Variáveis, cores e reset de estilos
+│   │   ├── components/     # Cards, Header, Tooltips
+│   │   ├── layout/         # Grids e responsividade
+│   │   └── style.css       # Arquivo final linkado no HTML
+│   └── js/
+│       └── chart.js        # Scripts de gráficos e interatividade
 └── templates/
-├── base.html
-└── index.html
-
----
-
-## 📦 Instalação e Execução
-
-### Pré-requisitos
-
-- Python 3.8+
-- Conexão à internet (para requisições à API)
+    ├── base.html           # Template base do Jinja2
+    └── index.html          # Página principal do painel
 
 ---
 
