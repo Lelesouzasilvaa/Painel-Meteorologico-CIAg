@@ -40,8 +40,7 @@ O dashboard demonstra boas práticas de desenvolvimento, focando na organizaçã
 
 O código Python e o CSS seguem uma estrutura modular para desacoplamento e clareza:
 
-```plaintext
-Painel-Meteorologico-CIAg/
+```Painel-Meteorologico-CIAg/
 ├── app.py                  # Roteamento Flask (Camada de Apresentação)
 ├── requirements.txt        # Lista de dependências Python
 ├── services/               # Camada de Negócios e Acesso a Dados
@@ -59,7 +58,7 @@ Painel-Meteorologico-CIAg/
 └── templates/
     ├── base.html           # Template base do Jinja2
     └── index.html          # Página principal do painel
-```plaintext
+```
 ---
 
 ## 📦 Instalação e Execução
@@ -71,27 +70,25 @@ Painel-Meteorologico-CIAg/
 
 ### Passo 1: Clonar o repositório
 
-git clone https://github.com/Lelesouzasilvaa/Painel-Meteorologico-CIAg
-cd Painel-Meteorologico-CIAg
+`git clone https://github.com/Lelesouzasilvaa/Painel-Meteorologico-CIAg`
+`cd Painel-Meteorologico-CIAg`
 
 ### Passo 2: Configurar ambiente virtual
+`python -m venv venv`
 
-# Criar ambiente virtual
-python -m venv venv
+#### Para ativar (Linux/macOS)
+`source venv/bin/activate`
 
-# Ativar (Linux/macOS)
-source venv/bin/activate
-
-# Ativar (Windows - PowerShell)
-.\venv\Scripts\Activate
+#### Para ativar (Windows - PowerShell)
+`.\venv\Scripts\Activate`
 
 ### Passo 3: Instalar dependências
 
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 ### Passo 4: Executar a aplicação
 
-python app.py
+`python app.py`
 
 Acesse o painel em: [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
