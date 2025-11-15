@@ -126,3 +126,5 @@ Acesse o painel em: [http://127.0.0.1:5000](http://127.0.0.1:5000)
 - O painel direito mostra previsão semanal resumida.
 - Cards de vento, umidade, pressão, UV e probabilidade de chuva possuem tooltips e hover animado.
 - O CSS é modular e responsivo, permitindo fácil manutenção e escalabilidade.
+
+  ![Demonstração](docs/demonstracao2.gif)
