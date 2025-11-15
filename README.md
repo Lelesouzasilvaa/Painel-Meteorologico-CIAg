@@ -59,7 +59,7 @@ Painel-Meteorologico-CIAg/
 └── templates/
     ├── base.html           # Template base do Jinja2
     └── index.html          # Página principal do painel
-
+```plaintext
 ---
 
 ## 📦 Instalação e Execução
