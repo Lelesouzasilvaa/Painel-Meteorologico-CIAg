@@ -1,0 +1,20 @@
+:root {
+    /* Cores */
+    --color-bg-dark: #12121e;
+    --color-card-dark: #1f1f33;
+    --color-text-light: #f0f0f0;
+    --color-highlight-blue: #00bcd4;
+    --color-text-muted: #aaaaaa;
+    --color-shadow-base: rgba(0, 0, 0, 0.25);
+    --color-shadow-hover: rgba(0, 0, 0, 0.4);
+    --color-border: rgba(255, 255, 255, 0.1);
+    --color-tooltip-bg: #1f1f33;
+    --color-tooltip-text: var(--color-text-light);
+
+    /* Espaçamento e Borda */
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --border-radius: 12px;
+    --transition-speed: 0.3s;
+}

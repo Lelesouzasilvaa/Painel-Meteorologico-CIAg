@@ -29,7 +29,7 @@
             
             <div class="card card-tempo-atual">
                 <div class="atual-principal">
-                    <span class="material-symbols-outlined icone-tempo">{{ current.icon }}</span>
+                    <span class="material-symbols-outlined icone-tempo" data-tooltip="{{ current.condition }}">{{ current.icon }}</span>
                     <span class="temp">{{ current.temp }}°</span>
                     <div class="detalhes-pequenos">
                         <p>Vento <span class="destaque-dados">{{ current.wind_speed }}</span> km/h</p>
@@ -49,7 +49,7 @@
                     {% for item in hourly_forecast %}
                     <div class="item-hora">
                         <p class="hora-tempo">{{ item.time }}</p>
-                        <span class="material-symbols-outlined icone">{{ item.icon }}</span>
+                        <span class="material-symbols-outlined icone" data-tooltip="{{ item.condition }}">{{ item.icon }}</span>
                         <p class="hora-temp">{{ item.temp }}°</p>
                     </div>
                     {% endfor %}
@@ -64,7 +64,7 @@
                 <div class="item-dia">
                     <p class="nome-dia">{{ day.day }}</p>
                     <div class="dia-temperaturas">
-                        <span class="material-symbols-outlined icone-dia">{{ day.icon }}</span>
+                        <span class="material-symbols-outlined icone-dia" data-tooltip="{{ day.condition }}">{{ day.icon }}</span>
                         <span class="temp-max">{{ day.max_temp }}°</span>
                         <span class="temp-min">{{ day.min_temp }}°</span>
                     </div>
@@ -77,7 +77,7 @@
     <div class="grid-widgets-inferiores">
         {% for widget in bottom_widgets %}
         <div class="card card-widget">
-            <span class="material-symbols-outlined icone">{{ widget.icon }}</span>
+            <span class="material-symbols-outlined icone" data-tooltip="{{ widget.label }}">{{ widget.icon }}</span>
             <p class="rotulo-widget">{{ widget.label }}</p>
             <p class="valor-widget destaque-dados">{{ widget.value }}</p>
         </div>
@@ -91,7 +91,6 @@
     const CHART_TEMPS = JSON.parse(`{{ chart_temps | default('[]') | tojson | safe }}`);
     const CHART_TIMES = JSON.parse(`{{ chart_times | default('[]') | tojson | safe }}`);
 </script>
-
 
 <script src="{{ url_for('static', filename='js/chart.js') }}"></script>
 {% endblock %}

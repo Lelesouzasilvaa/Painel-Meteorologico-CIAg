@@ -1,0 +1,32 @@
+body {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: var(--spacing-md);
+    line-height: 1.6;
+}
+
+h1, h2, p {
+    margin: 0;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    font-size: 24px; 
+    line-height: 1 !important;
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icone-tempo {
+    font-size: 48px !important;
+    line-height: 1 !important;
+}
+
+.destaque-dados {
+    color: var(--color-highlight-blue);
+    font-weight: bold;
+}

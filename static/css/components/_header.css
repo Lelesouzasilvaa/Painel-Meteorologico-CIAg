@@ -1,0 +1,50 @@
+.container-dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-md) 0;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.info-localizacao {
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-sm);
+}
+
+.cabecalho h1 {
+    font-size: 1.8em;
+}
+
+.cabecalho p {
+    color: var(--color-text-muted);
+    font-size: 0.8em;
+}
+
+.caixa-busca {
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.caixa-busca input {
+    background-color: var(--color-card-dark);
+    border: none;
+    padding: var(--spacing-sm) 15px;
+    border-radius: var(--spacing-xs);
+    color: var(--color-text-light);
+    outline: none;
+}
+
+.caixa-busca button {
+    background-color: var(--color-highlight-blue);
+    border: none;
+    color: var(--color-bg-dark);
+    padding: var(--spacing-sm);
+    border-radius: var(--spacing-xs);
+    cursor: pointer;
+}

@@ -1,0 +1,13 @@
+.card {
+    background-color: var(--color-card-dark);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px var(--color-shadow-base);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    min-height: 120px;
+}
+
+.card-widget:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
+}
