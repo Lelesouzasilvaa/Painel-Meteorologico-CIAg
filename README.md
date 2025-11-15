@@ -3,6 +3,7 @@
 Um painel de controle interativo e responsivo para visualização de dados climáticos em tempo real, utilizando a API Open-Meteo.  
 O dashboard demonstra boas práticas de desenvolvimento, focando na organização modular do código Python e CSS, e na apresentação clara das informações.
 
+![Demonstração](docs/demonstracao.gif)
 ---
 
 ## ✨ Funcionalidades Principais
