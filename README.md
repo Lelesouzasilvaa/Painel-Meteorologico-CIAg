@@ -111,6 +111,11 @@ Acesse o painel em: [http://127.0.0.1:5000](http://127.0.0.1:5000)
   - Roteamento Flask: `@app.route('/')` → Captura entrada do usuário, chama `get_weather_data` e renderiza `index.html`.
 
 ---
+
+<table>
+  <tr>
+    <td>
+        
 ## 💡 Observações
 
 - O cache evita múltiplas requisições à API se o mesmo dado for solicitado dentro de 5 minutos.
@@ -119,12 +124,15 @@ Acesse o painel em: [http://127.0.0.1:5000](http://127.0.0.1:5000)
 - Todos os dados são atualizados em tempo real e exibidos em Português.
 
 ---
-
 ## 🎨 Layout e Estilo
 
 - O painel esquerdo contém informações detalhadas do clima e previsão horária.
 - O painel direito mostra previsão semanal resumida.
 - Cards de vento, umidade, pressão, UV e probabilidade de chuva possuem tooltips e hover animado.
 - O CSS é modular e responsivo, permitindo fácil manutenção e escalabilidade.
-
-  ![Demonstração](docs/demonstracao2.gif)
+  </td>
+    <td>
+<p align="center">
+  <img src="docs/demonstracao2.gif" width="300" alt="Demonstração" />
+</p>
+</table>
