@@ -40,34 +40,25 @@ O dashboard demonstra boas práticas de desenvolvimento, focando na organizaçã
 
 O código Python e o CSS seguem uma estrutura modular para desacoplamento e clareza:
 
-Painel-Meteorologico-CIAg/
-├── app.py # Roteamento Flask (Camada de Apresentação)
-├── requirements.txt # Lista de dependências Python
-├── services/ # Camada de Negócios e Acesso a Dados
-│ ├── api_client.py # Funções puras para requisições externas (APIs)
-│ ├── mapping.py # Lógica para mapear códigos da API para ícones e descrições em Português
-│ └── weather_service.py # Orquestrador: Processa dados brutos e implementa a lógica de cache (get_cached_weather_data)
+```Painel-Meteorologico-CIAg/
+├── app.py                  # Roteamento Flask (Camada de Apresentação)
+├── requirements.txt        # Lista de dependências Python
+├── services/               # Camada de Negócios e Acesso a Dados
+│   ├── api_client.py       # Funções puras para requisições externas (APIs)
+│   ├── mapping.py          # Mapeamento de códigos da API para ícones e descrições em Português
+│   └── weather_service.py  # Orquestrador: processa dados brutos e implementa lógica de cache
 ├── static/
-│ ├── css/ # Modularização dos estilos
-│ │ ├── base/ # Variáveis e Reset
-│ │ ├── components/ # Cards, Header, Tooltips
-│ │ ├── layout/ # Grids e Responsividade
-│ │ └── style.css # Arquivo final linkado no HTML
-│ └── js/
-│ └── chart.js
+│   ├── css/                # Modularização dos estilos
+│   │   ├── base/           # Variáveis, cores e reset de estilos
+│   │   ├── components/     # Cards, Header, Tooltips
+│   │   ├── layout/         # Grids e responsividade
+│   │   └── style.css       # Arquivo final linkado no HTML
+│   └── js/
+│       └── chart.js        # Scripts de gráficos e interatividade
 └── templates/
-├── base.html
-└── index.html
-
----
-
-## 📦 Instalação e Execução
-
-### Pré-requisitos
-
-- Python 3.8+
-- Conexão à internet (para requisições à API)
-
+    ├── base.html           # Template base do Jinja2
+    └── index.html          # Página principal do painel
+```
 ---
 
 ## 📦 Instalação e Execução
@@ -79,27 +70,25 @@ Painel-Meteorologico-CIAg/
 
 ### Passo 1: Clonar o repositório
 
-git clone https://github.com/Lelesouzasilvaa/Painel-Meteorologico-CIAg
-cd Painel-Meteorologico-CIAg
+`git clone https://github.com/Lelesouzasilvaa/Painel-Meteorologico-CIAg`
+`cd Painel-Meteorologico-CIAg`
 
 ### Passo 2: Configurar ambiente virtual
+`python -m venv venv`
 
-# Criar ambiente virtual
-python -m venv venv
+#### Para ativar (Linux/macOS)
+`source venv/bin/activate`
 
-# Ativar (Linux/macOS)
-source venv/bin/activate
-
-# Ativar (Windows - PowerShell)
-.\venv\Scripts\Activate
+#### Para ativar (Windows - PowerShell)
+`.\venv\Scripts\Activate`
 
 ### Passo 3: Instalar dependências
 
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 ### Passo 4: Executar a aplicação
 
-python app.py
+`python app.py`
 
 Acesse o painel em: [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
