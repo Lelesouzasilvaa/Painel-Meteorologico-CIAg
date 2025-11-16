@@ -136,3 +136,5 @@ Acesse o painel em: [http://127.0.0.1:5000](http://127.0.0.1:5000)
   <img src="docs/demonstracao2.gif" width="300" alt="Demonstração" />
 </p>
 </table>
+
+[**Entenda o Painel Meteorológico em Minutos**](https://youtu.be/2jzNpmAlde4)
